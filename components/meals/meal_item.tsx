@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import styles from './meal_item.module.css';
 
-interface Props {
+export interface Props {
 	title: string;
 	slug: string;
 	image: StaticImageData;

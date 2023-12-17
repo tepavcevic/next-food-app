@@ -1,15 +1,10 @@
-import { StaticImageData } from 'next/image';
+import { Props as MealItemProps } from './meal_item';
 import MealItem from './meal_item';
 import styles from './meals_grid.module.css';
 
-type Meal = {
+interface Meal extends MealItemProps {
 	id: string;
-	title: string;
-	slug: string;
-	image: StaticImageData;
-	summary: string;
-	creator: string;
-};
+}
 
 interface Props {
 	meals: Array<Meal>;
