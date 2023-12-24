@@ -1,21 +1,17 @@
-import { Props as MealItemProps } from './meal_item';
+import { Meal } from '@/lib/meals';
 import MealItem from './meal_item';
 import styles from './meals_grid.module.css';
 
-interface Meal extends MealItemProps {
-	id: string;
+interface MealsGridProps {
+	meals: Meal[];
 }
 
-interface Props {
-	meals: Array<Meal>;
-}
-
-export default function MealsGrid({ meals }: Props) {
+export default function MealsGrid({ meals }: MealsGridProps) {
 	return (
 		<ul className={styles.meals}>
 			{meals.map((meal) => (
 				<li key={meal.id}>
-					<MealItem {...meal} />
+					<MealItem meal={meal} />
 				</li>
 			))}
 		</ul>

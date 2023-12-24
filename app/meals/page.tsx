@@ -2,8 +2,10 @@ import Link from 'next/link';
 
 import styles from './page.module.css';
 import MealsGrid from '@/components/meals/meals_grid';
+import { getMeals, Meal } from '@/lib/meals';
 
 export default function MealsPage() {
+	const meals: Meal[] = getMeals();
 	return (
 		<>
 			<header className={styles.header}>
@@ -21,7 +23,7 @@ export default function MealsPage() {
 				</p>
 			</header>
 			<main className={styles.main}>
-				<MealsGrid meals={[]} />
+				<MealsGrid meals={meals} />
 			</main>
 		</>
 	);
