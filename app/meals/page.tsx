@@ -11,6 +11,11 @@ function Meals() {
 	return <MealsGrid meals={meals} />;
 }
 
+export const metadata = {
+	title: 'NextLevel | All Meals',
+	description: 'Browse all the delicios meals on our page.',
+};
+
 export default function MealsPage() {
 	return (
 		<>

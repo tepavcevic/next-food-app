@@ -4,11 +4,26 @@ import { getMeal } from '@/lib/meals';
 import styles from './page.module.css';
 import { notFound } from 'next/navigation';
 
+interface MealIDPageParams {
+	params: { mealID: string };
+}
+
+export async function generateMetadata({
+	params: { mealID },
+}: MealIDPageParams) {
+	const meal = getMeal(mealID);
+
+	if (!meal) return notFound();
+
+	return {
+		title: meal.title,
+		description: meal.summary,
+	};
+}
+
 export default function MealDetailsPage({
 	params: { mealID },
-}: {
-	params: { mealID: string };
-}) {
+}: MealIDPageParams) {
 	const meal = getMeal(mealID);
 
 	if (!meal) return notFound();
