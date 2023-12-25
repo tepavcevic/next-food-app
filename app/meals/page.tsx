@@ -6,7 +6,7 @@ import { getMeals, Meal } from '@/lib/meals';
 import { Suspense } from 'react';
 
 function Meals() {
-	const meals = getMeals();
+	const meals: Meal[] = getMeals();
 
 	return <MealsGrid meals={meals} />;
 }
