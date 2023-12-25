@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 import styles from './page.module.css';
 import MealsGrid from '@/components/meals/meals_grid';
-import { getMeals, Meal } from '@/lib/meals';
+import { getMeals, DBMeal } from '@/lib/meals';
 import { Suspense } from 'react';
 
 function Meals() {
-	const meals: Meal[] = getMeals();
+	const meals: DBMeal[] = getMeals();
 
 	return <MealsGrid meals={meals} />;
 }

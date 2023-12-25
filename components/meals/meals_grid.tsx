@@ -1,9 +1,9 @@
-import { Meal } from '@/lib/meals';
+import { DBMeal } from '@/lib/meals';
 import MealItem from './meal_item';
 import styles from './meals_grid.module.css';
 
 interface MealsGridProps {
-	meals: Meal[];
+	meals: DBMeal[];
 }
 
 export default function MealsGrid({ meals }: MealsGridProps) {

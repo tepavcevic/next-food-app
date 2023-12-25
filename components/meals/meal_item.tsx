@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 
 import styles from './meal_item.module.css';
-import { Meal } from '@/lib/meals';
+import { DBMeal } from '@/lib/meals';
 
 interface MealItemProps {
-	meal: Meal;
+	meal: DBMeal;
 }
 
 export default function MealItem({ meal }: MealItemProps) {
