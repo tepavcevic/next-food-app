@@ -19,7 +19,6 @@
 # misc
 .DS_Store
 *.pem
-meals
 
 # debug
 npm-debug.log*
