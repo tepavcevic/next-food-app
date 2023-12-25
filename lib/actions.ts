@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import { PayloadMeal, saveMeal } from './meals';
+import { revalidatePath } from 'next/cache';
 
 export interface ShareMealState {
 	message: string | null;
@@ -40,5 +41,6 @@ export async function shareMeal(
 	}
 
 	await saveMeal(meal);
+	revalidatePath('/meals');
 	redirect('/meals');
 }
